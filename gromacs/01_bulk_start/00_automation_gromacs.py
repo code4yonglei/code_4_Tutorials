@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+# -*- coding:utf-8 -*-
 
 """
 File: automation_start.py
@@ -19,7 +19,10 @@ os.system('clear')
 copy1 = shutil.copy('../00_itp/simu_sysm_step.mdp', 'simu_sysm_step.mdp')
 copy2 = shutil.copy('../00_itp/simu_sysm_nvtt.mdp', 'simu_sysm_nvtt.mdp')
 copy3 = shutil.copy('../00_itp/simu_sysm_nptt.mdp', 'simu_sysm_nptt.mdp')
-copy4 = shutil.copy('../00_itp/simu_sysm_stat.mdp', 'simu_sysm_stat.mdp')
+copy4 = shutil.copy('../00_itp/simu_sysm_annl.mdp', 'simu_sysm_annl.mdp')
+copy5 = shutil.copy('../00_itp/simu_sysm_equi.mdp', 'simu_sysm_equi.mdp')
+copy6 = shutil.copy('../00_itp/simu_sysm_stat.mdp', 'simu_sysm_stat.mdp')
+
 
 ######################################################## pbs file
 
@@ -46,7 +49,7 @@ fout.close()
 
 fout = open("packmol.inp", "wt")
 
-head = '''tolerance 2.5
+head = '''tolerance 2.0
 filetype pdb
 output packmol.pdb
 '''
