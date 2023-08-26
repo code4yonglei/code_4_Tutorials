@@ -1,1 +1,1 @@
-> This repository contains code and scripts used for varied tutorials.## GROMACS
+> This repository contains code and scripts used for varied tutorials.## GROMACS## teaching_ChemicalModelling_SU- contains code materials for teaching a "Chemical Modelling" course for master students in SU.
