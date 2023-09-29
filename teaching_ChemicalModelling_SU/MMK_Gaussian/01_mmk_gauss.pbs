@@ -1,0 +1,30 @@
+#!/bin/tcsh
+#PBS -l nodes=gnode:ppn=24
+#PBS -l walltime=10:00:00:00
+#PBS -N YLW_xmolx
+#PBS -q all
+#PBS -j oe
+#PBS -e err.log
+#PBS -o out.log
+
+setenv job xmolx
+
+setenv g16root /home
+setenv GAUSS_SCRDIR .
+source $g16root/g16/bsd/g16.login
+
+cd mmk_path
+
+$g16root/g16/g16   < $job.gjf > $job.log
+wait
+sleep 5s
+
+$g16root/g16/formchk $job.chk   $job.fchk
+
+$g16root/g16/cubegen 0 MO=HOMO $job.fchk $job.homo.cube 0 h
+$g16root/g16/cubegen 0 MO=LUMO $job.fchk $job.lumo.cube 0 h
+
+#$g16root/g16/cubegen 0 density=scf   $job.fchk $job.dent.cube 0 h
+#$g16root/g16/cubegen 0 potential=scf $job.fchk $job.pote.cube 0 h
+
+# $g16root/g16/cubegen 0 spin=scf $job.fchk $job.spin.cube 0 h
