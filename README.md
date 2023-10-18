@@ -4,4 +4,4 @@ This folder contains the code examples I contributed to ENCCS workshops and othe
 
 ## julia_hpc
 
-Code examples are designed for the [**Julia for HPC**](https://enccs.github.io/julia-for-hpc/) workshop.
+Code examples are designed for the [**Julia for High-Performance Scientific Computing**](https://enccs.github.io/julia-for-hpc/) workshop.
