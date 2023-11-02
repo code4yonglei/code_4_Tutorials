@@ -1,1 +1,0 @@
-{'proj_a': {'lang': 'Python', 'city': 'Stockholm', 'start': 2022}, 'proj_b': {'lang': 'C/C++', 'city': 'Uppsala', 'start': 2023}, 'proj_c': {'lang': 'Julia', 'city': 'Linkoping', 'start': 2024}}
