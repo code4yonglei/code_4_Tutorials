@@ -1,7 +1,15 @@
-# Code for Training
+# Code for Training, Workshops, and Webinars
 
 This folder contains the code examples I contributed to ENCCS workshops and other trainings.
 
-## julia_hpc
+## 2310-julia-hpc
 
-Code examples are designed for the [**Julia for High-Performance Scientific Computing**](https://enccs.github.io/julia-for-hpc/) workshop.
+Code examples for the [**Julia for High-Performance Scientific Computing**](https://enccs.github.io/julia-for-hpc/) workshop.
+
+
+## 2402-scilifelab-nsc-enccs-webinar
+
+Code samples for the one hour webinar for SciLifeLab-NSC-ENCCS collaboration.
+
+
+
