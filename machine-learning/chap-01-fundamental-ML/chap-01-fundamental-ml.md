@@ -125,6 +125,31 @@ Machine learning systems should be evaluated using **performance measures** that
 - Unsupervised learning problems do not have an error signal to measure; instead, **performance metrics** for unsupervised learning problems measure some attribute of structure discovered in data, such as distances within and between clusters.
 
 
+## 1.6 An introduction to Scikit-learn
+
+Since its release in 2007, [**scikit-learn**](https://scikit-learn.org/) has become one of the most popular machine learning libraries.
+- Scikit-learn is built on popular NumPy and SciPy.
+    - NumPy extends Python to support efficient operations on large arrays and multi-dimensional matrices.
+    - SciPy provides modules for scientific computing.
+    - Matplotlib is often used for data visualization.
+- Scikit-learn provides algorithms for machine learning tasks including classification, regression, dimensionality reduction, and clustering.
+- It also provides modules for pre-processing data, extracting features, optimizing hyperparameters, and evaluating models.
+
+```python
+import sklearn
+print(sklearn.__version__)
+```
+
+The easiest way to install scikit-learn is to use `pip`:
+```python
+$ pip install -U scikit-learn
+```
+
+If `pip` is not available on your system, you can use `conda` and consider to create a python virtual environment to store all packages and libraries.
+
+![](./scikit-learn.png)
+
+
 
 
 
