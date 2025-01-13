@@ -102,7 +102,27 @@ When training data is scarce, a practice called **cross-validation** can be used
 ![](./cross-validation.png)
 
 
+## 1.5 Bias and variance
 
+Many metrics can be used to measure whether or not a program is learning to perform its task more effectively. For supervised learning problems, many performance metrics measure the amount of prediction error. There are two fundamental causes of prediction error: a model's **bias** and its **variance**. Assume that you have many training sets that are all unique, but equally representative of population.
+- A model with high bias will produce similar errors for an input regardless of training set it used to learn; model biases its own assumptions about real relationship over relationship demonstrated in training data.
+- A model with high variance, conversely, will produce different errors for an input depending on training set that it used to learn.
+- A model with high bias is inflexible, but a model with high variance may be so flexible that it models noise in training set.
+    - That is, a model with high variance over-fits training data, while a model with high bias under-fits training data.
+- It can be helpful to visualize bias and variance as darts thrown at a dartboard.
+    - Each dart is analogous to a prediction, and is thrown by a model trained on a different dataset every time.
+    - A model with high bias but low variance will throw darts that will be tightly clustered, but could be far from bulls-eye.
+    - A model with high bias and high variance will throw darts all over board; darts are far from bulls-eye and from each other.
+    - A model with low bias and high variance will throwndarts that could be poorly clustered but close to bulls-eye.
+    - A model with low bias and low variance will throw darts that are tightly clustered around bulls-eye.
+
+![](./bias-vs-variance.png)
+
+Ideally, a model will have both low bias and variance, but efforts to decrease one will frequently increase the other. This is known as **bias-variance trade-off**.
+
+Machine learning systems should be evaluated using **performance measures** that represent costs associated with making errors in real world, but this applies to some but not all application.
+- For supervised ML, most performance measures can only be calculated for a specific type of task, like classification or regression. 
+- Unsupervised learning problems do not have an error signal to measure; instead, **performance metrics** for unsupervised learning problems measure some attribute of structure discovered in data, such as distances within and between clusters.
 
 
 
