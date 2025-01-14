@@ -149,11 +149,5 @@ If `pip` is not available on your system, you can use `conda` and consider to cr
 
 ![](./scikit-learn.png)
 
-
-
-
-
-
-
 :::danger
 :::
