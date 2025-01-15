@@ -20,7 +20,7 @@ For classification tasks, a set of tuples of feature vectors and class labels co
 - In regression tasks, feature vectors are each associated with a response variable that takes a realvalued scalar instead of a label. The prediction is mean or weighted mean of kNN response variables.
 
 
-### 3.2 Lazy learning and non-parametric models
+## 3.2 Lazy learning and non-parametric models
 
 kNN is a **lazy learner** (known as **instance-based learners**), it simply store training dataset with little or no processing.
 - In contrast to **eager learners** (such as **simple linear regression**), kNN does not estimate parameters of a model that generalizes training data during a training phase.
@@ -39,6 +39,20 @@ In contrast to most of other models that we will discuss, **kNN is a non-paramet
 		- kNN makes only one assumption: instances that are near each other are likely to have similar values of response variable.
 		- This flexibility provided by non-parametric models is not always desirable;
 	- A model that makes assumptions about the relationship can be useful if training data is scarce or if you know relationship.
+
+
+# 3.3 Classification with kNN
+
+Tutorial **1-height-weight-gender** using a person's height and weight (two explanatory variables) to predict gender (response variable).
+- This is called **binary classification** because response variable can take one of two labels.
+- kNN is not limited to two features as kNN algorithm can use an arbitrary number of features, but more than three features cannot be visualized.
+- Male denoted by red O and female denoted by green markers.
+
+![](1-height-weight-gender-data.png)
+
+
+
+
 
 
 
