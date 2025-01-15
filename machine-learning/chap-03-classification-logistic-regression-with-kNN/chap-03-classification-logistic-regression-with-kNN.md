@@ -20,6 +20,27 @@ For classification tasks, a set of tuples of feature vectors and class labels co
 - In regression tasks, feature vectors are each associated with a response variable that takes a realvalued scalar instead of a label. The prediction is mean or weighted mean of kNN response variables.
 
 
+### 3.2 Lazy learning and non-parametric models
+
+kNN is a **lazy learner** (known as **instance-based learners**), it simply store training dataset with little or no processing.
+- In contrast to **eager learners** (such as **simple linear regression**), kNN does not estimate parameters of a model that generalizes training data during a training phase.
+- Lazy learning has advantages and disadvantages.
+	- Training an eager learner is often computationally costly, but prediction with resulting model is often inexpensive.
+		- For simple linear regression, prediction consists only of multiplying learned coefficient by feature, and adding learned intercept parameter.
+	- A lazy learner can predict almost immediately, but making predictions can be costly.
+		- In simple implementation of kNN, prediction requires calculating distances between a test instance and all training instances.
+
+In contrast to most of other models that we will discuss, **kNN is a non-parametric model**.
+- A parametric model uses a fixed number of parameters, or coefficients, to define the model that summarizes the data.
+	- The number of parameters is independent of number of training instances.
+- Non-parametric may seem to be a misnomer, as it does not mean that the model has no parameters;
+	- Non-parametric means that number of parameters of model is not fixed, and may grow with number of training instances.
+	- Non-parametric models can be useful when training data is abundant and you have little prior knowledge about relationship between response and explanatory variables.
+		- kNN makes only one assumption: instances that are near each other are likely to have similar values of response variable.
+		- This flexibility provided by non-parametric models is not always desirable;
+	- A model that makes assumptions about the relationship can be useful if training data is scarce or if you know relationship.
+
+
 
 
 
