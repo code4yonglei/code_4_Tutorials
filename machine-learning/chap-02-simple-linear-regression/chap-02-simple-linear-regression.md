@@ -97,9 +97,20 @@ With variance of explanatory variable and covariance of response and explanatory
 - the obtained values can be compared with model parameters `model.coef_` and `model.intercept_`.
 
 
+## 2.2 Evaluating model
 
-
-
+How can we assess whether our model is a good representation of real relationship?
+- We can evaluate y value predictor using a measure called **R-squared**.
+- Known as coefficient of determination, **R-squared** measures how close the data are to a regression line.
+- Several methods to calculate R-squared.
+	- In simple linear regression, **R-squared = square of Pearson product-moment correlation coefficient (PPMCC)** (Pearson's r value).
+	- Using this method, R-squared must be a positive number between 0 and 1.
+	- Other methods, including method used by scikit-learn, R-squared can be negative if model performs extremely poorly.
+	- R-squared in particular is sensitive to outliers, and can spuriously increase when features are added to model.
+- **We will follow method used by scikit-learn to calculate R-squared**.
+	- $R^2 = 1 - \frac{SS_{res}}{SS_{tot}} = \frac{\sum_{i=1}^n(y_i - f(x_i))^2}{\sum_{i=1}^n(y_i - \bar{y})^2}$
+- The `score` method of `LinearRegression` returns the model's R-squared value.
+	- `model.score(x,y)`
 
 :::danger
 :::
