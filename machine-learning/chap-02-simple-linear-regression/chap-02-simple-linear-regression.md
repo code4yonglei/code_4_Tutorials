@@ -8,6 +8,9 @@ In this chapter, we will introduce simple linear regression
 
 ## 2.1 Intro to simple linear regression
 
+
+### 2.1.1 A tutorial for simple linear regression
+
 Let's model relationship between pizza price ~ pizza size, salary ~ year of experience, or hourse price ~ house size.
 
 The code example in **1-home-price** jupyter notebook.
@@ -37,6 +40,33 @@ observed data.
 The `fit` method of `LinearRegression` learns parameters of a linear model **y = w*x + b** for simple linear regression.
 - **x** is explanatory variable, and **y** is predicted value of response variable
 - coefficient **w** and intercept **b** are parameter of models that are learned by learning algorithm, sometimes they are called **weight** and **bias**
+
+Using training data to learn model parameters for simple linear regression that produce best fitting model is called **ordinary least squares (OLS)** or **linear least squares**.
+- we can conduct learning using scikit learn library
+- ==we can also using analytical method to obtain model parameters==
+- ==we will learn approaches for approximating model parameters that are suitable for larger datasets==
+
+
+### 2.1.2 Evaluating fitness of model with a cost function
+
+Why the obtained model parameter is the best parameters? If we have several sets of models (in figure), how can we assess which set of model parameters produced the best-fitting regression line?
+
+![](./1-house-price-2.png)
+
+A **cost function** (**loss function**) is used to measure error of a model.
+- The differences between predicted values by trial model parameters and observed data in training set are called **residuals** (**training errors**).
+- The differences between predicted values and observed data in test data are called **prediction errors** (**test errors**).
+- **residuals** are indicated by vertical lines between points for training instances and regression hyperplane in following plot:
+
+![](./1-house-price-3.png)
+
+The best predictor can be achieved by minimizing the sum of all residuals. That
+is, our model fits if itt predicted value for response variables are close to observed values for all training examples. This measure of model's fitness is called **residual sum of squares (RSS)** cost function. RSS is calculated with equation $SS_{res} = \sum_{i=1}^n (y_i - f(x_i))^2$, where $y_i$ are observed values and $f(x_i)$ are predicted values
+
+
+
+
+
 
 
 
