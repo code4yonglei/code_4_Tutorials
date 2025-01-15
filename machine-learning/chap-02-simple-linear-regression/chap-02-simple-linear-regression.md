@@ -64,7 +64,37 @@ The best predictor can be achieved by minimizing the sum of all residuals. That
 is, our model fits if itt predicted value for response variables are close to observed values for all training examples. This measure of model's fitness is called **residual sum of squares (RSS)** cost function. RSS is calculated with equation $SS_{res} = \sum_{i=1}^n (y_i - f(x_i))^2$, where $y_i$ are observed values and $f(x_i)$ are predicted values
 
 
+### 2.1.3 Solving OLS for simple linear regression
 
+Simple linear regression is given by equation **y = w\*x + b** and that our goal is to solve OLS to get values of **w** and **b** to minimize cost function. To do so, we need to will calculate **variance of x** and **covariance of x and y**.
+
+**Variance** is a measure of how far a set of values are spread out.
+- If all numbers in dataset are equal, variance of this dataset is zero.
+- A small variance indicates that numbers are near the mean of data set
+- a dataset containing numbers that are far from the mean and from each other will have a large variance.
+- Variance can be calculated using equation $var(x) = \frac{\sum_{i=1}^n (x_i - \bar{x})^2}{n-1}$
+	- $\bar{x}$ is the mean of x
+	- $x_i$ is value of x for $i^{th}$ training instance
+	- $n$ is number of training instances
+	- **why substract 1?**
+		- we substract 1 from number of training instances when calculating sample variance.
+		- this technique is called **Bessel's correction**.
+		- it corrects the bias in the estimation of the population variance from a sample.
+	- Variance can also be calculated from Numpy.
+
+**Covariance** is a measure of how much two variables change together.
+* If two variables increase together, their covariance is positive.
+- If one variable tends to increase while the other decreases, their covariance is negative.
+- If there is no linear relationship between two variables, their covariance will be equal to zero; they are linearly uncorrelated but not necessarily independent.
+- Covariance can be calculated using formula $cov(x,y) = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{n-1}$
+	- $\bar{y}$ is the mean of y
+	- $y_i$ is value of $i^th$ training instance
+	- Covariance can also be calculated from Numpy.
+
+With variance of explanatory variable and covariance of response and explanatory variables
+- **w** can be obtained using equation $w = \frac{cov(x,y)}{var(x)}$
+- **b** can be obtained using formula $b = \bar{y} - w*\bar{x}$
+- the obtained values can be compared with model parameters `model.coef_` and `model.intercept_`.
 
 
 
