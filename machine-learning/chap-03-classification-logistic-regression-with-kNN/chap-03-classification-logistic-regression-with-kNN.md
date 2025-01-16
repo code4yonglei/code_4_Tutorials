@@ -1,5 +1,6 @@
 # Chapter 3: Classification and Logistic Regression with k-Nearest Neighbors
 
+
 In this chapter, we will introduce `k-Nearest Neighbors (KNN)` algorithm for classification and logistic regression tasks.
 
 
@@ -41,17 +42,26 @@ In contrast to most of other models that we will discuss, **kNN is a non-paramet
 	- A model that makes assumptions about the relationship can be useful if training data is scarce or if you know relationship.
 
 
-# 3.3 Classification with kNN
+## 3.3 Classification with kNN
 
 Tutorial **1-height-weight-gender** using a person's height and weight (two explanatory variables) to predict gender (response variable).
 - This is called **binary classification** because response variable can take one of two labels.
 - kNN is not limited to two features as kNN algorithm can use an arbitrary number of features, but more than three features cannot be visualized.
 - Male denoted by red O and female denoted by green markers.
 
-![](1-height-weight-gender-data.png)
+![](1-height-weight-gender-plot.png)
 
 
+### 3.3.1 Prediction using Euclidean distance
 
+Let's use **Euclidean distance** to predict whether a person with a given height (155 cm) and weight (70 kg) is a man or a woman. 
+- First define distance measure.
+	- **Euclidean distance** = the straight distance between points in a Euclidean space. 
+	- Euclidean distance in a two-dimensional space is given by formula $d(p,q) = d(q,p) = \sqrt{(q_1-p_1)^2 + (q_2-p_2)^2}$
+	- Cal distance between test point to all other points
+- Set $k=3$ and select 3 (marked as `x` in figure) nearest training instances
+	- blue O is test point
+	- 2 neighbors are female and 1 is male. We therefore predict that test instance is female
 
 
 
