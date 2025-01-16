@@ -127,6 +127,39 @@ It is important that regression performance measures disregard directions of err
 - Note that for ordinary linear regression, such as simple linear regression problem, minimizes square root of MSE.
 
 
+### 3.4.2 Scaling features
+
+> Tutorial `2-height-gender-weight.ipynb`
+
+Many learning algorithms work better when features take similar ranges of values.
+- In this regression task, we used two features
+	- a binary-valued feature representing gender
+	- a continuous-valued feature representing height in cm.
+- Consider a dataset in which a man is 170 cm tall and a woman is 160 cm tall.
+	- which instance is closer to a man who is 164 cm tall?
+	- For weight prediction problem, we probably believe that query is closer to male instance; a 6 cm difference in height is less important to predicting weight than difference between gender.
+	- If we represent height in mm, query instance is closer to 1600 mm tall female.
+	- If we represent height in m, query instance is closer to 1.7 meter tall male.
+	- If we represent heights in micrometers, height feature would dominate distance function even more.
+
+![]()
+
+scikit-learn's `StandardScaler` is a transformer that scales features so that they have unit variance.
+- It first centers features by subtracting mean of each feature from each instance's value of feature.
+- It then scales features by dividing each instance's value of feature by standard deviation of feature.
+- Data that has zero mean and unit variance is **standardized**.
+	- Like `LabelBinarizer`, `StandardScaler` implements transformer interface.
+- We standardize previous problem's features, fit regressor, and compare performances of two models
+	```
+	Coefficient of determination: 0.6706425961745109
+	Mean absolute error (MAE): 7.583333333333336
+	Mean squared error (MAE): 85.13888888888893
+	```
+- The model performs better on standardized data.
+	- The feature representing gender contributes more to distance between instances and allows model to make better predictions.
+
+![]()
+
 
 :::danger
 :::
