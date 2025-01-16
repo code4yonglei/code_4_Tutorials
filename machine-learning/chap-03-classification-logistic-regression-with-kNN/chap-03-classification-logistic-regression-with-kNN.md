@@ -80,6 +80,25 @@ Implement a kNN classifier using scikit-learn
 	- call `fit` and `predict` just as we did with simple linear regression object
 - 3rd use our fit `LabelBinarizer` to reverse transformation and return a string label
 
+Validate the kNN classifier via predictions for a test set
+- 4 test points and got 3 right prediction
+- Reason: Recall from *Chapter 1*, there are two types of errors in binary classification tasks: **false positives** and **false negatives**.
+- There are many performance measures for classifiers
+	- some measures may be more appropriate than others depending on consequences of types of errors in application.
+	- we will **assess our classifier using several common performance measures, including accuracy, precision, and recall**.
+		- Accuracy is proportion of test instances that were classified correctly, here it is 75%.
+		- Precision is proportion of test instances that were predicted to be positive that are truly positive. here positive class is male (male=1). The assignment of male and female to positive and negative classes is arbitrary, and could be reversed. Our classifier predicted that one of test instances is positive class. This instance is truly positive class, so classifier's precision is 100%:
+		- Recall is proportion of truly positive test instances that were predicted to be positive. Our classifier predicted that one of two truly positive test instances is positive. Its recall is therefore 50%.
+	- Sometimes it is useful to summarize precision and recall with a single statistic, called **F1 score or F1 measure**. 
+		- F1 score is harmonic mean of precision and recall
+		- Note that arithmetic mean of precision and recall scores is upper bound of F1 score. F1 score penalizes classifiers more as difference between their precision and recall scores increases. 
+	- **Matthews correlation coefficient (MCC)** is an alternative to F1 score for measuring performance of binary classifiers.
+		- A perfect classifier's MCC is 1.
+		- A trivial classifier that predicts randomly will score 0.
+		- A perfectly wrong classifier will score -1.
+		- MCC is useful even when proportions of classes in test set is severely imbalanced.
+- scikit-learn provides a `classification_report` function that reports precision, recall, and F1 score
+
 
 
 
