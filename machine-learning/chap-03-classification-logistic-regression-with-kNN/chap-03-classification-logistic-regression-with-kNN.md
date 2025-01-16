@@ -100,6 +100,32 @@ Validate the kNN classifier via predictions for a test set
 - scikit-learn provides a `classification_report` function that reports precision, recall, and F1 score
 
 
+## 3.4 Regression with kNN
+
+
+### 3.4.1 kNN for a regression task
+
+> Tutorial `2-height-gender-weight.ipynb`
+
+Using kNN for a regression task to predict weight from height and gender
+- instantiate and fit `KNeighborsRegressor`, and use it to predict weights
+- in dataset, gender is coded as a binary-valued feature (1 for male and 0 for female), while height values range from 155 to 191 (this is a problem and will discuss how it can be ameliorated).
+- adopt two performance measures for regression tasks--**MeanAbsolute Error (MAE)** and **Mean Squared Error (MSE)**:
+	- **MAE** is average of absolute values of errors of predictions, $MAE = \frac{1}{n} \sum_{i=0}^{n-1} | y_i - \hat{y_i} |$
+	- **MSD** is average of squares of errors of predictions, $MSE = \frac{1}{n} \sum_{i=0}^{n-1} ( y_i - \hat{y_i} )^2$
+
+```
+Coefficient of determination: 0.6290565226735438
+Mean absolute error (MAE): 8.333333333333336
+Mean squared error (MAE): 95.8888888888889
+```
+
+It is important that regression performance measures disregard directions of errors; otherwise, errors of a regressor that under- and over-predicts equally would cancel out.
+- MSE and MAE accomplish this by squaring errors and taking absolute values of errors.
+- MSE penalizes outliers more than MAE; squaring a large error makes it contribute disproportionately more to total error.
+	- This may be desirable in some problems, but MSE is often preferred even when it is not, as MSE has useful mathematical properties.
+- Note that for ordinary linear regression, such as simple linear regression problem, minimizes square root of MSE.
+
 
 
 :::danger
