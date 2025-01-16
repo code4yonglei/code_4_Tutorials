@@ -64,7 +64,21 @@ Let's use **Euclidean distance** to predict whether a person with a given height
 	- 2 neighbors are female and 1 is male. We therefore predict that test instance is female
 
 
+### 3.3.2 Implementation of a kNN classifier using scikit-learn
 
+Implement a kNN classifier using scikit-learn
+- 1st use `LabelBinarizer` to convert labels (famele and male) to integers as our labels are strings 
+	- `LabelBinarizer` implements **transformer interface**, which consists of `fit`, `transform`, and `fit_transform` methods.
+	- `fit` method prepares transformer; here it creates a mapping from label strings to integers.
+	- `transform` method applies mapping to input labels.
+	- `fit_transform` is convenient to call `fit` and `transform`.
+		- A transformer should be fit only on training set.
+		- Independently fitting and transforming the training and testing sets could result in inconsistent mappings from labels to integers; here male might be mapped to 1 in training set and 0 in testing set.
+		- Fitting on entire dataset should also be avoided because for some transformers it will leak information about testing set into model. This advantage won't be available in production, so performance measures on test set may be optimistic.
+- 2nd initialize `KNeighborsClassifier`
+	- Even though kNN is a lazy learner, it still implements estimator interface
+	- call `fit` and `predict` just as we did with simple linear regression object
+- 3rd use our fit `LabelBinarizer` to reverse transformation and return a string label
 
 
 
