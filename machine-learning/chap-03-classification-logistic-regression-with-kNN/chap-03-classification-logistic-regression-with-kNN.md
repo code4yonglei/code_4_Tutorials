@@ -161,5 +161,18 @@ scikit-learn's `StandardScaler` is a transformer that scales features so that th
 ![]()
 
 
+### 3.5 Summary
+
+- kNN is a simple but powerful model that can be used in classification and regression tasks.
+- KNN is a lazy learner and a non-parametric model;
+	- it does not estimate values of a fixed number of parameters from training data.
+- Instead, it stores all training instances and uses instances that are nearest test instance to predict value of response variable.
+- We worked through toy classification and regression problems.
+	- We introduced scikit-learn's transformer interface;
+	- We used `LabelBinarizer` to transform string labels to binary labels
+	- We used `StandardScaler` to standardize our features.
+- Next chapter will discuss feature extraction techniques for categorical variables, text, and images;
+	- these allow us to apply kNN to more problems in real world.
+
 :::danger
 :::
