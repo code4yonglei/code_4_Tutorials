@@ -99,6 +99,8 @@ Validate the kNN classifier via predictions for a test set
 		- MCC is useful even when proportions of classes in test set is severely imbalanced.
 - scikit-learn provides a `classification_report` function that reports precision, recall, and F1 score
 
+![](./1-height-weight-gender-test.png)
+
 
 ## 3.4 Regression with kNN
 
@@ -142,7 +144,7 @@ Many learning algorithms work better when features take similar ranges of values
 	- If we represent height in m, query instance is closer to 1.7 meter tall male.
 	- If we represent heights in micrometers, height feature would dominate distance function even more.
 
-![]()
+![](./2-height-gender-weight-data.png)
 
 scikit-learn's `StandardScaler` is a transformer that scales features so that they have unit variance.
 - It first centers features by subtracting mean of each feature from each instance's value of feature.
@@ -158,7 +160,7 @@ scikit-learn's `StandardScaler` is a transformer that scales features so that th
 - The model performs better on standardized data.
 	- The feature representing gender contributes more to distance between instances and allows model to make better predictions.
 
-![]()
+![](./2-height-gender-weight-regular-standard.png)
 
 
 ### 3.5 Summary
