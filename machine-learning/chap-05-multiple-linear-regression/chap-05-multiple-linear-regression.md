@@ -29,6 +29,24 @@ We update training and test data to include number of rooms and age of house
 ![](./1-house-price-multivarient-linear-regression.png)
 
 
+## 5.2 Polynomial regression
+
+In this section, we use polynomial regression, a special case of multiple linear regression that models a linear relationship between response variable and polynomial feature terms.
+- real-world curvilinear relationship is captured by transforming features, which are then fit in same manner as in multiple linear regression
+
+**Quadratic regression** (regression with a 2nd-order polynomial) is given by equation $y = a + b*x^1 + c*x^2$.
+- we use only one feature for one explanatory variable, but model now has three terms instead of two
+	- explanatory variable has been transformed and added as a third term to model to capture curvilinear relationship
+- use `PolynomialFeatures` transformer to add polynomial features to a feature representation
+	- 2nd/3rd/7th-order polynomial
+	- compare *R-squared score* via `model.score(x_train, y_train)`
+	- an extremely complex model fits training data exactly, but fails to approximate real relationship, which is called **overfitting**
+	- if test data is available, model with overfitted parameters fails to test data
+- code example in **1-house-price-train.ipynb**
+
+![](./1-house-price-polynomial-regression.png)
+
+
 
 
 
