@@ -109,6 +109,26 @@ Scikit-learn is a tool for building ML systems, and it has fewer capabilities fo
 		- six subplots show strong and weak correlations
 
 
+### 5.4.3 Fitting and evaluating model
+
+We load data using pandas and separated response variable from explanatory variables
+- split data into training and testing sets
+```
+x_data = df1[list(df1.columns)[:-1]]
+y_data = df1.quality
+x_train, x_test, y_train, y_test = train_test_split(x_data, y_data, test_size=0.25, random_state=10)
+```
+- check R-squared score
+- use cross validation to produce a better estimate of estimator's performance
+	- use `cross_val_score` function to perform cross validation using provided data and estimator
+	- `cross_val_score(model2, x_data, y_data, cv=5)`
+		- use 5-fold cross validation
+		- `cross_val_score` returns value of estimator's score method for each round
+		- R-squared scores range from 0.13 to 0.37
+		- mean value (0.29) is a better estimate of estimator's predictive power than R-squared score produced from a single train/test split
+- inspect model's predictions and plot true quality scores against predicted scores
+
+
 
 
 
