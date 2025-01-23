@@ -47,6 +47,30 @@ In this section, we use polynomial regression, a special case of multiple linear
 ![](./1-house-price-polynomial-regression.png)
 
 
+## 5.3 Regularization
+
+**Regularization is a collection of techniques used to prevent overfitting**.
+- regularization adds information to a problem, often in form of a penalty against complexity
+- regularization attempts to find simplest model that explains data
+
+Scikit-learn provides several regularized linear regression models.
+- **ridge regression**, known as Tikhonov regularization, penalizes model parameters that become too large
+	- ridge regression modifies RSS cost function by adding $L^2$ norm of coefficients $RSS_{ridge} = \sum_{i=1}^n (y_i - x_i^T w)^2 + \lambda\sum_{j=1}^p w_j^2$
+	- $\lambda$ is a hyperparameter that controls strength of penalty
+	- recall that hyperparameters are parameters of model that control how learning algorithm learns
+	- lambda increases, penalty increases, and value of cost function increases
+	- when lambda = 0, ridge regression = linear regression
+- **LASSO** (Least Absolute Shrinkage and Selection Operator) from scikit-learn.
+	- LASSO penalizes coefficients by adding their $L^1$ norm to cost function $RSS_{LASSO} = \sum_{i=1}^n (y_i - x_i^T w)^2 + \lambda\sum_{j=1}^p w_j$
+	- LASSO produces sparse parameters; model will depend on a small subset of features
+		- in contrast, ridge regression produces models in which most parameters are small but non-zero
+	- when explanatory variables are correlated, LASSO will shrink coefficients of one variable towards 0
+		- ridge regression will shrink them more uniformly
+- **elastic net regularization** from scikit-learn
+	- ENR linearly combines L1 and L2 penalties
+	- LASSO and ridge regression are special cases of elastic net method
+
+
 
 
 
