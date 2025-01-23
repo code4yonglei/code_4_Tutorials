@@ -89,6 +89,25 @@ We have worked through a toy problem to learn how linear regression models relat
 - we approach problem as a multi-class classification task and regress wine's quality onto one or more physicochemical attributes
 
 
+### 5.4.2 Exploring data
+
+
+Training data contains 12 explanatory variables.
+
+![./2-.]
+
+Scikit-learn is a tool for building ML systems, and it has fewer capabilities for exploring data.
+- we first use **pandas** to generate descriptive statistics from data
+- we then use these statistics to inform some design decisions for model
+	- load csv dataset
+	- `df.describe()` calculate summary statistic for each column
+	- matplotlib to create multiple scatter plots
+	- `df.corr()` calculates a pairwise correlation matrix and decides explanatory variables to include in model
+	- correlation matrix confirms
+		- strongest positive correlation is quality-alcohol, 
+		- strongly negative correlated is quality-volatile acidity
+		- six subplots show strong and weak correlations
+
 
 
 
