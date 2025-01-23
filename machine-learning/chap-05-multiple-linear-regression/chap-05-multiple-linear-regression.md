@@ -71,6 +71,25 @@ Scikit-learn provides several regularized linear regression models.
 	- LASSO and ridge regression are special cases of elastic net method
 
 
+## 5.4 Applying linear regression
+
+
+### 5.4.1 Download data for wine quality
+
+
+We have worked through a toy problem to learn how linear regression models relationships between explanatory and response variables.
+- now we use a real dataset and apply linear regression to an task
+	- at a partyt you wish to drink best wine
+	- you buy pH test strips and tools to measure physicochemical properties
+	- use ML to predict quality of wine based on its physicochemical attributes
+- **UCI Machine Learning Repository's Wine** dataset measures eleven physicochemical attributes of 1599 red wines
+	- each wine's quality has been scored by human judges
+		- scores range from zero (worst quality) to ten (best quality)
+		- data is [here](https://archive.ics.uci.edu/dataset/109/wine)
+- we approach problem as a multi-class classification task and regress wine's quality onto one or more physicochemical attributes
+
+
+
 
 
 
