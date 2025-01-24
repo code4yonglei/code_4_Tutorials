@@ -45,3 +45,34 @@ In logistic regression, response variable describes probability that outcome is 
 
 ![](./0-plot-logistic-func.png)
 
+
+## 6.2 Spam filtering
+
+Our first problem is a modern version of canonical binary classification problem: spam filtering.
+- we will classify spam and ham sms messages rather than e-mail
+- we will extract tf-idf features from messages using techniques shown in previous chapters, and classify messages using logistic regression
+- we use *SMS Spam Collection Data Set* from *UCI Machine Learning Repository*.
+	- download dataset from [HERE](http://archive.ics.uci.edu/dataset/228/sms+spam+collection)
+
+==**Tutorial: 1-sms-spam-collection.ipynb**==
+
+First explore dataset and calculate basic summary statistics using pandas
+- `df.head()`
+- `df[df[0] == 'spam'][0].count()`
+	- each row comprises a binary label and a text message
+	- dataset contains 5574 instances; 4825 messages are *ham* and remaining 747 are *spam*
+
+We make some predictions using scikit-learn's `LogisticRegresion` class.
+- 1st split dataset into training and test sets. default `train_test_split` assigns 75% samples to training
+- 2nd create a `TfidfVectorizer`,which combines `CountVectorizer` and `TfidfTransformer`
+	- we fit it with training messages and transform both training and test messages
+- 3rd create an instance of `LogisticRegression` and train the model
+	- `LogisticRegression` implements `fit` and `predict` methods
+- linear regression performs bad
+- below we discuss some performance metrics to evaluate binary classifiers
+
+
+
+
+:::danger
+:::
