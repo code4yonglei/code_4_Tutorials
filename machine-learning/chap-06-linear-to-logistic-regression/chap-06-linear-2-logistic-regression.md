@@ -27,4 +27,21 @@ Ordinary linear regression assumes that response variable is normally distribute
 - **bernoulli distribution** describes probability distribution of a random variable that can take positive case with probability *P* or negative case with probability *1-P*.
 	- if response variable represents a probability, it must be constrained to [0, 1]
 
+Linear regression assumes that a constant change in value of a feature results in a constant change in value of response variable, an assumption that cannot hold if value of response variable represents a probability.
+- generalized linear models remove this assumption by relating a linear combination of features to response variable using a link function.
+	- we have already used a link function in [Chap. 2: Simple Linear Regression](../chap-02-simple-linear-regression/chap-02-simple-linear-regression.md)
+	- ordinary linear regression is a special case of generalized linear model that links a linear combination of features to a normally distributed response variable using identity function
+	- we can use a different link function to relate a linear combination of features to a response variable that is not normally distributed
+
+In logistic regression, response variable describes probability that outcome is positive case. 
+- if response variable is equal to or exceeds a discrimination threshold, positive class is predicted; otherwise, negative class is predicted
+- response variable is modeled as a function of a linear combination of features using **logistic function**
+	- logistic function always returns a value between 0 and 1: $F(t)=\frac{1}{1+e^{-t}}$
+	- following plot of value of logistic function for range [-6, 6]
+	- for logistic regression, *t=* a linear combination of explanatory variables as $F(t)=\frac{1}{1+e^{-(b+wx)}}$
+	- - **logit function** is inverse of logistic function
+		- it links $F(x)$ back to a linear combination of features $g(x) = ln\frac{F(x)}{1-F(x)} = b + wx$
+		- model's parameters can be estimated using a variety of learning algorithms, including gradient descent
+
+![](./0-plot-logistic-func.png)
 
