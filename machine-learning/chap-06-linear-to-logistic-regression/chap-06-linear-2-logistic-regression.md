@@ -14,5 +14,17 @@ Previously, we discussed simple, multiple, and polynomial linear regression. The
 	- apply some feature extraction techniques in [Chap. 4: Feature Extraction](../chap-04-feature-extraction/).
 
 
+## 6.1 Binary classification with logistic regression
+
+Ordinary linear regression assumes that response variable is normally distributed.
+- **normal distribution** (or **Gaussian distribution**) is a function that describes probability that an observation will have a value between any two real numbers
+	- normally distributed data is symmetrical
+	- half values are greater than mean and half are less than mean
+	- many natural phenomena are approximately normally distributed, *i.e.*,
+		- height of people is normally distributed, most people are of average height, a few are tall, and a few are short
+	- response variable for some problems is not normally distributed, *i.e.*,
+		- a coin toss can result in two outcomes: heads or tails
+- **bernoulli distribution** describes probability distribution of a random variable that can take positive case with probability *P* or negative case with probability *1-P*.
+	- if response variable represents a probability, it must be constrained to [0, 1]
 
 
