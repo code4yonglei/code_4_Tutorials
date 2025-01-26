@@ -78,7 +78,25 @@ Apart from these steps in pipeline, there are some additional steps that might c
 - *i.e.*, deep learning, which is used extensively to build intelligent products around image, text, and audio data, often requires training data to be labeled into a category or augmented if quantity is too small to create an accurate model
 
 
+## 3. What is Pandas?
 
+[Pandas](https://pandas.pydata.org/) is a high-performance open source library for data analysis in Python developed by Wes McKinney in 2008.
+- pandas stands for **panel data**, a reference to tabular format in
+which it processes data
+- it is available for free and is distributed with a 3-Clause BSD
+License under open source initiative
+- over years, it has become de-facto standard library for data analysis using Python
+- there's been great adoption of tool, and there's a large community behind it, (1200+ contributors, 17000 commits, 23 versions, and 15000+ stars) rapid iteration, features, and enhancements are continuously made
+
+Some key features of pandas include:
+- it can process a variety of datasets in different formats: time series, tabular heterogeneous, and matrix data
+- it facilitates loading/importing data from varied sources, such as CSV and databases such as SQL
+- it can handle myriad operations on datasets: subsetting, slicing, filtering, merging, groupBy, re-ordering, and re-shaping
+- it can deal with missing data according to rules defined by user/developer, such as ignore, convert to 0, and so on
+- it can be used for parsing and munging (conversion) of data as well as modeling and statistical analysis
+- it integrates well with other Python libraries such as statsmodels, SciPy, and scikit-learn
+- it delivers fast performance and can be sped up even more by making use of Cython (C extensions to Python)
+- for more information, go through official pandas [documentation](https://pandas.pydata.org/docs/)
 
 
 
