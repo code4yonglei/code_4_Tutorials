@@ -120,6 +120,17 @@ Pandas can be used to perform steps 4-6 in pipeline.
 	- Time series functionality
 
 
+## 5. Benefits of using pandas
+
+Benefits of pandas compared to using a language such as Java, C, or C++ for data analysis are manifold
+- data representation
+	- it can easily represent data in a form that's naturally suited for data analysis via its DataFrame and series data structures in a concise manner
+	- doing equivalent in Java/C/C++ requires many lines of custom code as these languages were not built for data analysis but rather networking and kernel development
+- data subsetting and filtering
+	- it permits easy subsetting and filtering of data, procedures that are a staple of doing data analysis
+- concise and clear code
+	- its concise and clear API allows user to focus more on their core goal, rather than having to write a lot of scaffolding code in order to perform routine tasks
+
 
 :::danger
 :::
