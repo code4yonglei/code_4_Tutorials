@@ -99,6 +99,25 @@ Some key features of pandas include:
 - for more information, go through official pandas [documentation](https://pandas.pydata.org/docs/)
 
 
+## 4. Where does pandas fit in pipeline?
+
+Pandas can be used to perform steps 4-6 in pipeline.
+- pandas is an indispensable library if you're working with data, and it would be near impossible to find code for data modeling that doesn't import pandas into working environment
+- easy-to-use syntax in Python and availability of a spreadsheet-like data structure called a dataframe make it amenable even to users who are too comfortable and too unwilling to move away from Excel
+- pandas is suited well for following types of dataset:
+	- tabular with heterogeneous type columns
+	- ordered and unordered time series
+	- matrix/array data with labeled or unlabeled rows and columns
+- pandas can perform following operations on data with finesse
+	- easy handling of missing and NaN data
+	- addition and deletion of columns
+	- automatic and explicit data alignment with labels
+	- groupBy for aggregating and transforming data using split-apply-combine
+	- converting differently indexed Python or NumPy data to DataFrame
+	- slicing, indexing, hierarchical indexing, and subsetting of data
+	- merging, joining, and concatenating data
+	- I/O methods for flat files, HDF5, feather, and parquet formats
+	- Time series functionality
 
 
 
