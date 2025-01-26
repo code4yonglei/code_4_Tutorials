@@ -45,7 +45,37 @@ So much data, so little time for analysis
 - technologies and tools have evolved to meet the ever-increasing demands of business, there has been a move towards **real-time analytics**
 
 
+## 2. Data analytics pipeline
 
+Data modeling is the process of using data to build predictive models.
+- data can also be used for descriptive and prescriptive analysis.
+- before we make use of data, it has to be fetched from several sources, stored, assimilated, cleaned, and engineered to suit our goal
+- sequential operations that need to be performed on data are akin to a manufacturing pipeline, where each subsequent step adds value to potential end product and each progression requires a new person or skill set
+- various steps in a **data analytics pipeline** are shown in following diagram:
+
+![](./fig-01-steps-in-data-analytics-pipeline.png)
+
+These steps can be combined into three high-level categories: **data engineering**, **data science**, and **product development**
+- data Engineering (steps 1-3): it deals with sourcing data from a variety of sources, creating a suitable database and table schema, and loading data in a suitable database. there can be many approaches to this step depending on
+	- type of data: structured (tabular data) vs unstructured (such as images and text) vs semi-structured (such as JSON and XML)
+	- velocity of data upgrade: batch processing vs real-time data streaming
+	- volume of data: distributed (or cluster-based) storage vs single instance databases
+	- variety of data: document storage, blob storage, or data lake
+- data Science (steps 4-8): it is phase where data is made usable and used to predict future, learn patterns, and extrapolate these patterns
+	- data science can further be subdivided into two phases
+	- steps 4-6 comprise 1st phase, wherein goal is to understand data better and make it usable
+		- making data usable requires considerable effort to clean it by removing invalid characters and missing values
+		- it also involves understanding nitty-gritty of data at hand—what is distribution of data, what is relationship between different data variables, is there a causatory relationship between input and outcome variable, ...
+		- it also involves exploring numerical transformations (features) that might explain this causation (between input and outcome variables) better
+		- this phase entails real forensic effort that goes into ultimate use of data
+	- steps 7-8 constitute part where patterns (parameters of a mathematical expression) are learned from historic data and extrapolated to future data
+		- it involves a lot of experimentation and iterations to get to optimal results
+		- but if previus phase has been done with utmost care, this phase can be implemented pretty quickly thanks to number of packages in Python, R, and many other data science tools
+- product Development: this is phase where all hard work bears fruit and all insights, results, and patterns are served to users in a way that they can consume, understand, and act upon
+	- it might range from building a dashboard on data with additional derived fields to an API that calls a trained model and returns an output on incoming data
+
+Apart from these steps in pipeline, there are some additional steps that might come into picture, which is due to highly evolving nature of data landscape.
+- *i.e.*, deep learning, which is used extensively to build intelligent products around image, text, and audio data, often requires training data to be labeled into a category or augmented if quantity is too small to create an accurate model
 
 
 
