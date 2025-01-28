@@ -140,6 +140,24 @@ Accuracy measures fraction of classifier's predictions that are correct.
 	- F0.5 and F2 scores bias precision over recall and recall over precision, respectively
 
 
+### 6.2.5 ROC AUC
+
+**Receiver Operating Characteristic (ROC) curve visualizes classifier's performance**
+-  unlike accuracy, ROC curve is insensitive to datasets with unbalanced class
+proportions
+-  unlike precision and recall, ROC curve illustrates classifier's performance for all values of discrimination threshold
+- ROC curves plot classifier's recall against its fall-out
+	- fall-out, or false positive rate, is number of false positives divided by total number of negatives
+	- it is calculated using following: $F = \frac{FP}{TN + FP}$
+- AUC is area under ROC curve
+	- it reduces ROC curve to a single value that represents expected performance of classifier
+
+We plot ROC curve for SMS spam classifier
+- dashed line in following figure is for a classifier that predicts classes randomly; it has an AUC of 0.5
+- our classifier outperforms random guessing
+
+![](./1-sms-spam-collection-ROC-curve.png)
+
 
 
 :::danger
