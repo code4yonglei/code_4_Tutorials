@@ -87,8 +87,27 @@ A variety of metrics exist for evaluating performance of binary classifiers agai
 - a **confusion matrix**, or contingency table, to visualize true and false positives and negatives
 	- rows of matrix are true classes of instances, columns are predicted classes of instances
 
-![](./1-sms-spam-collection.png)
+![](./1-sms-spam-collection-confusion-matrix.png)
 
+
+### 6.2.2 Accuracy
+
+Accuracy measures fraction of classifier's predictions that are correct.
+- `LogisticRegression.score` predicts scores labels for a test set using accuracy
+	- `model.score(x_test, y_test))` is value of truly predicted values in diagonal cells over all instances
+	- `cross_val_score(model, x_train, y_train, cv=5)`
+	- `cross_val_score(model, x_train, y_train, cv=5, scoring="accuracy")`
+		- default is `scoring="accuracy"`
+	- `cross_val_score(model, x_train, y_train, cv=5, scoring="balanced_accuracy")`
+	- use `cross_validate` to run both `accuracy` and `balanced_accuracy`
+- accuracy measures overall correctness of classifier, it does not distinguish between false positive errors and false negative errors
+	- some applications may be more sensitive to false negatives than false positives
+	-  accuracy is not an informative metric if proportions of classes are skewed in population
+	- *i.e.*, a classifier that predicts whether or not credit card transactions are fraudulent may be more sensitive to false negatives than to false positives
+	- to promote customer satisfaction, credit card company may prefer to risk verifying legitimate transactions rather than risk ignoring a fraudulent transaction
+	- because most transactions are legitimate, accuracy is not an appropriate metric for this problem
+- a classifier that always predicts that transactions are legitimate could have a high accuracy score but may not be useful
+- for these reasons, classifiers are often evaluated using **precision and recall**
 
 
 
