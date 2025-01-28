@@ -72,6 +72,29 @@ We make some predictions using scikit-learn's `LogisticRegresion` class.
 - below we discuss some performance metrics to evaluate binary classifiers
 
 
+### 6.2.1 Binary classification performance metrics
+
+A variety of metrics exist for evaluating performance of binary classifiers against trusted labels.
+- most common metrics are accuracy, precision, recall, F1 measure, and ROC AUC score.
+- all depend on concept of true positives, true negatives, false positives, and false negatives
+- positive and negative refer to classes
+- true and false denote whether predicted class is same as true class
+	- for SMS spam classifier
+	- a true positive prediction is when classifier correctly predicts that a message is spam
+	- a true negative prediction is when classifier correctly predicts that a message is ham
+	- a prediction that a ham message is spam is a false positive prediction
+	- a spam message incorrectly classified as ham is a false negative prediction
+- a **confusion matrix**, or contingency table, to visualize true and false positives and negatives
+	- rows of matrix are true classes of instances, columns are predicted classes of instances
+
+![](./1-sms-spam-collection.png)
+
+
+
+
+
+
+
 
 
 :::danger
