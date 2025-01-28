@@ -110,6 +110,23 @@ Accuracy measures fraction of classifier's predictions that are correct.
 - for these reasons, classifiers are often evaluated using **precision and recall**
 
 
+### 6.2.3 Precision and recall
+
+- **Precision** is fraction of positive predictions that are correct
+	- in SMS spam classifier, precision is fraction of messages classified as spam that are actually spam
+- **Recall** is fraction of truly positive instances that classifier recognized, sometimes called sensitivity in medical domains
+	- a recall score of 1 indicates that classifier did not make any false negative predictions
+	- for SMS spam classifier, recall is fraction of truly spam messages that were classified as spam
+- individually, precision and recall are seldom informative; they are both incomplete views of a classifier's performance
+	- both precision and recall can fail to distinguish classifiers that perform well from certain types of classifiers that perform poorly
+	- a trivial classifier could easily achieve a perfect recall score by predicting positive for every instance
+- *i.e.*, assume that a test set contains 10 positive examples and 10 negative examples
+	- a classifier that predicts positive for every example will achieve a recall of 1
+	- a classifier that predicts negative for every example, or one that makes only false positive and true negative predictions, will achieve a recall score of 0
+	- similarly, a classifier that predicts that only a single instance is positive and happens to be correct will achieve perfect precision
+- we calculate SMS classifier's precision and recall
+	- classifier's precision showes that almost messages that it predicted as spam were actually spam
+	- its recall is lower, indicating that it incorrectly classified approximately 32% of spam messages as ham
 
 
 
