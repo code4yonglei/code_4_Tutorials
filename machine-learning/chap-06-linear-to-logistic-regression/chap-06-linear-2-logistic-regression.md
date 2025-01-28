@@ -129,6 +129,15 @@ Accuracy measures fraction of classifier's predictions that are correct.
 	- its recall is lower, indicating that it incorrectly classified approximately 32% of spam messages as ham
 
 
+### 6.2.4 Calculating F1, F0.5, and F2 measures
+
+**F1 measure is harmonic mean of precision and recall scores**
+- it penalizes classifiers with imbalanced precision and recall scores, like trivial classifier that always predicts positive class
+	- a model with perfect precision and recall scores will achieve an F1 score of 1
+	- a model with a perfect precision score and a recall score of 0 will achieve an F1 score of 0
+- we compute our classifier's F1 score
+	- models are sometimes evaluated using the F0.5 and F2 scores
+	- F0.5 and F2 scores bias precision over recall and recall over precision, respectively
 
 
 
