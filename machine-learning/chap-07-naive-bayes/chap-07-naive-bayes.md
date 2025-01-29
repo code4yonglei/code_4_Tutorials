@@ -87,6 +87,39 @@ approach that requires an intermediate step?
 - discriminative models generally perform better than generative models as number of training instances increases
 
 
+## 7.3 Naive Bayes
+
+
+### 7.3.1 What is Naive Bayes
+
+In 1st section, Bayes' theorem is given by $P(A|B) = \frac{P(B|A)P(A)}{P(B)}$ 
+- we rewrite Bayes' theorem in terms that are more natural for a classification task
+	- $P(y|x_1, ... x_n) = \frac{P(x_1, ..., x_n|y)P(y)}{P(x_1, ..., x_n)}$
+	- y is positive class
+	- $x_1$ is 1st feature for instance, and $n$ is number of features
+	- $P(B)$ is constant for all inputs, so we can omit it
+		- probability of observing a particular feature in training set does not vary for different test instances
+	- this leaves two terms
+		- prior class probability, $P(y)$
+		- conditional probability, $P(x_1, ..., x_n|y)$
+- Naive Bayes estimates these terms using maximum a posteriori estimation
+	- $P(y)$ is simply frequency of each class in training set
+	- for categorical features, $P(x_i|y)$ is simply frequency of feature in training instances belonging to that class
+		- its estimate is given by $\hat{P}(x_i|y_i) = \frac{N_{x_i, y_j}}{N_{y_j}}$
+        - numerator is number of times that feature appears in training samples of class $y_j$
+		- denominator is total frequency of all features for class $y_j$
+- Naive Bayes predicts class with greatest probability, as given by
+	- $\hat{y} = argmax_y P(y)\Pi_{i=1}^n P(x_i|y)$
+	- note that even when a Naive Bayes classifier performs well, estimated class probabilities can be poorly calibrated
+	- the variants of Naive Bayes differ mostly in their assumptions about distribution of $P(x_i|y)$, and therefore types of features that they can learn from
+- the variant we have discussed
+- **multinomial Naive Bayes**, is suitable for categorical features
+	- our term frequency features represent each token in a corpus as a categorical variable
+- **Gaussian Naive Bayes** is suitable for continuous features
+	- it assumes that each feature is normally distributed for each class
+- **Bernoulli Naive Bayes** is suitable when all features are binary-valued
+	- scikit-learn's `GaussianNB`, `BernoulliNB`, and `MultinomialNB` classes implement these variants
+
 
 
 
