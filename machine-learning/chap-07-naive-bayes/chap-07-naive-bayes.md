@@ -121,6 +121,30 @@ In 1st section, Bayes' theorem is given by $P(A|B) = \frac{P(B|A)P(A)}{P(B)}$
 	- scikit-learn's `GaussianNB`, `BernoulliNB`, and `MultinomialNB` classes implement these variants
 
 
+### 7.3.2 Assumptions of Naive Bayes
+
+
+Model is called Naive because it assumes that features are conditionally independent given response variable $P(x_i | y) = P(x_i | y, x_j)$
+- note that this is not equivalent to assuming that features are independent, as given by $P(x_i) = P(x_i | x_j)$.
+- this independence assumption is seldom true
+- however, Naive Bayes can effectively discriminate between linearly separable classes even when this assumption is violated, and often performs better than discriminative models when training data is scarce
+- in addition to performing well, Naive Bayes models are typically fast and simple to implement
+
+Consider an article classification task for a news site.
+- given an article, our goal is to assign it to a newspaper section, such as "International Politics", "U.S. Politics", "Science and Technology" or "Sports"
+- Naive Bayes assumption means that knowing that an article belongs to sports section and knowing that article contains word "basketball" does not affect your beliefs about whether words "Warriors" or "UNC" appear in article
+- this assumption does not hold in this task
+	- knowing that an article is from "Sports" section and that it contains word "basketball" should make us believe that it is more likely to contain words "UNC", "NCAA", and "Michael Jordan", and less likely to contain unrelated words such as "sandwich" or "meteor"
+	- knowing that an article belongs to sports section and contains word "Duke" should make us more believe that it is more likely to contain words "trip" and "flop"
+- while Naive Bayes assumption seldom holds, it is necessary
+- model would have an impractical number of parameters without it, and it allows class conditional probabilities to be estimated directly from training data
+
+Naive Bayes also assumes that training instances are **independent and identically distributed (i.i.d)**
+- this means that training instances are independent from each other and are drawn from same probability distribution
+- repeatedly tossing a coin produces i.i.d. samples
+	- probability of each flip landing heads is same, and outcome of any flip does not depend on outcome of any other flip
+- unlike conditional independence assumption, this assumption must hold for Naive Bayes to perform well
+
 
 
 :::danger
