@@ -60,6 +60,32 @@ having disease given a positive test result
 - only 9% of 22 positive predictions are true positives
 
 
+## 7.2 Generative and discriminative models
+
+In classification tasks, our goal is to learn parameters of a model that optimally maps
+features of explanatory variables to response variable.
+- all classifiers discussed before are **discriminative models**
+	- which learn a decision boundary that is used to discriminate between classes
+- *probabilistic discriminative models*, such as logistic regression, learn to estimate conditional probability $P(y|x)$
+	- they learn to estimate which class is most likely given input features
+- *non-probabilistic discriminative models*, such as KNN, directly map features to classes
+
+**Generative models** do not directly learn a decision boundary.
+- they model joint probability distribution of features and classes, $P(x,y)$
+- this is equivalent to modelling probabilities of classes and probabilities of features given classes
+- that is, generative models model how classes generate features
+- Bayes' theorem can then be applied to a generative model to estimate conditional probability of a class given features
+
+If our goal in classification tasks is to map features to classes, why would we use an
+approach that requires an intermediate step?
+- why choose a generative model instead of a discriminative model?
+- one reason is that generative models can be used to generate new examples of data
+- more important, generative models can be more biased than their discriminative counterparts because they model how classes generate data
+- this intermediate step introduces more assumptions to model
+- when these assumptions hold, generative models are more robust to noisy training data and may perform better than discriminative models when training data is scarce
+	- disadvantage is that these assumptions can prevent generative models from learning
+- discriminative models generally perform better than generative models as number of training instances increases
+
 
 
 
