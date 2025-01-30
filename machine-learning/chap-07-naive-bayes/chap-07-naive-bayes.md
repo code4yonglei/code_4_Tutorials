@@ -179,6 +179,20 @@ Naive Bayes classifiers often outperform logistic regression classifiers on smal
 ![](./1-performance-NB-LR-breast-cancer-dataset.png)
 
 
+### 7.4.2 Pima Indians Diabetes Database
+
+We compare performances of logistic regression and Naive Bayes classifiers on Pima Indians Diabetes Database
+- use pandas to load csv file
+- csv file lacks a header row, so we split response variable from features using column indices
+- next to create a stratified test set
+- again train and evaluate models on increasingly large samples of training set, and plot accuracies
+- ==Naive Bayes classifier is more accurate than the logistic regression classifier on small datasets, but accuracy of logistic regression classifier continues to improve as size of dataset increases==
+
+![](./1-performance-NB-LR-pima-indians-diabetes.png)
+
+
+
+
 
 
 
