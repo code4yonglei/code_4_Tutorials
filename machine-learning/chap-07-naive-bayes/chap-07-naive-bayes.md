@@ -1,6 +1,5 @@
 # Chapter 7: Naive Bayes
 
-
 Previous chapters introduced two models for classification tasks: kNN and logistic regression.
 - here introduce another family of classifiers called Naive Bayes
 - named for its use of Bayes' theorem and for its naive assumption that all features are conditionally independent of each other given response variable, Naive Bayes is 1st generative model to discuss
@@ -12,8 +11,7 @@ Previous chapters introduced two models for classification tasks: kNN and logist
 
 ## 7.1 Bayes' theorem
 
-**Bayes' theorem** is a formula for calculating probability of an event using prior
-knowledge of related conditions.
+**Bayes' theorem** is a formula for calculating probability of an event using prior knowledge of related conditions.
 - theorem was discovered by Thomas Bayes in 18th century
 - Bayes never published his work; his notes were edited and published posthumously by mathematician Richard Price
 - Bayes' theorem is given by formula $P(A|B) = \frac{P(B|A)P(A)}{P(B)}$ 
@@ -47,8 +45,7 @@ We can solve this using Bayes' theorem if we know values of terms $P(A)$, $P(B)$
 
 Following is Bayes' theorem re-written in terms of our events:
 - $P(disease|positive) = \frac{P(positive|disease)P(disease)}{P(positive|disease)P(disease) + P(positive|not-disease)P(not-disease)}$
-- we solve for all terms, and can now solve for conditional probability of
-having disease given a positive test result
+- we solve for all terms, and can now solve for conditional probability of having disease given a positive test result
 - $P(disease|positive) = \frac{0.99*0.002}{0.99*0.002+0.02*0.998} = 0.09$
 - probability that a patient who tests positive truly has disease is less than 10%
 - this seems incorrect
@@ -62,8 +59,7 @@ having disease given a positive test result
 
 ## 7.2 Generative and discriminative models
 
-In classification tasks, our goal is to learn parameters of a model that optimally maps
-features of explanatory variables to response variable.
+In classification tasks, our goal is to learn parameters of a model that optimally maps features of explanatory variables to response variable.
 - all classifiers discussed before are **discriminative models**
 	- which learn a decision boundary that is used to discriminate between classes
 - *probabilistic discriminative models*, such as logistic regression, learn to estimate conditional probability $P(y|x)$
@@ -76,8 +72,7 @@ features of explanatory variables to response variable.
 - that is, generative models model how classes generate features
 - Bayes' theorem can then be applied to a generative model to estimate conditional probability of a class given features
 
-If our goal in classification tasks is to map features to classes, why would we use an
-approach that requires an intermediate step?
+If our goal in classification tasks is to map features to classes, why would we use an approach that requires an intermediate step?
 - why choose a generative model instead of a discriminative model?
 - one reason is that generative models can be used to generate new examples of data
 - more important, generative models can be more biased than their discriminative counterparts because they model how classes generate data
@@ -158,8 +153,7 @@ We fit a Naive Bayes classifier with scikit-learn, and compare performances of N
 - we use Breast Cancer Wisconsin dataset consisting of features extracted from fine needle aspirate images of breast masses
 	- task is to classify masses as malignant or benign using 30 real-valued features that describe cell nuclei in each fine needle aspirate image
 	- dataset has 212 malignant instances and 357 benign instances
-- Pima Indians Diabetes Database task is to predict whether an individual has diabetes using eight features representing number of times individual has been pregnant, measures from an oral glucose tolerance test, diastolic blood pressure, triceps skin fold thickness, body mass index,
-age, and other diagnostics
+- Pima Indians Diabetes Database task is to predict whether an individual has diabetes using eight features representing number of times individual has been pregnant, measures from an oral glucose tolerance test, diastolic blood pressure, triceps skin fold thickness, body mass index, age, and other diagnostics
 	- dataset has 268 diabetic instances and 500 non-diabetic instances
 
 We start with Breast Cancer Wisconsin dataset
@@ -191,10 +185,13 @@ We compare performances of logistic regression and Naive Bayes classifiers on Pi
 ![](./1-performance-NB-LR-pima-indians-diabetes.png)
 
 
+## 7.5 Summary
 
-
-
-
+In this chapter, we introduced our 1st generative model, Naive Bayes.
+- we used Bayes' theorem to calculate probability that a patient who tests positive for a disease actually has disease
+	- using our knowledge of the test's performance and related conditions
+- we compared generative and discriminative models, used scikit-learn to train a Naive Bayes classifier
+	- and compared its performance with that of a discriminative model
 
 :::danger
 :::
