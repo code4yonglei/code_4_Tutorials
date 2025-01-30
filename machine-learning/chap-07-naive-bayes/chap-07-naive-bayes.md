@@ -146,6 +146,41 @@ Naive Bayes also assumes that training instances are **independent and identical
 - unlike conditional independence assumption, this assumption must hold for Naive Bayes to perform well
 
 
+## 7.4 Naive Bayes with scikit-learn
+
+**Tutorial 1: 1-performance-NB-LR.ipynb**
+
+
+### 7.4.1 Breast Cancer Dataset
+
+
+We fit a Naive Bayes classifier with scikit-learn, and compare performances of Naive Bayes and logistic regression classifiers on increasingly large samples of two different training sets.
+- we use Breast Cancer Wisconsin dataset consisting of features extracted from fine needle aspirate images of breast masses
+	- task is to classify masses as malignant or benign using 30 real-valued features that describe cell nuclei in each fine needle aspirate image
+	- dataset has 212 malignant instances and 357 benign instances
+- Pima Indians Diabetes Database task is to predict whether an individual has diabetes using eight features representing number of times individual has been pregnant, measures from an oral glucose tolerance test, diastolic blood pressure, triceps skin fold thickness, body mass index,
+age, and other diagnostics
+	- dataset has 268 diabetic instances and 500 non-diabetic instances
+
+We start with Breast Cancer Wisconsin dataset
+- load dataset using scikit-learn's `load_breast_cancer` convenience function
+- split off 20% instances to use as a test set using `train_test_split` convenience function
+- `stratify=y` specifies that training and test sets should have equal proportions of positive and negative instances
+	- this is important when classes are imbalanced, as sampling instances uniformly at random could result in a training or testing set with few instances of minority class
+- use `train_test_split` again to take increasingly large slices of remaining instances
+	- and use them to train `LogisticRegression` and `GaussianNB` classifiers
+- finally plot classifiers' scores
+
+Naive Bayes classifiers often outperform logistic regression classifiers on small datasets
+- Naive Bayes is more biased, which prevents it from overfitting noise
+	- however, this bias also can also stunt model's learning on large datasets
+- ==Naive Bayes classifier initially performs better than logistic regression classifier, but logistic regression classifier's performance improves as size of training set increases==
+
+![](./1-performance-NB-LR-breast-cancer-dataset.png)
+
+
+
+
 
 :::danger
 :::
