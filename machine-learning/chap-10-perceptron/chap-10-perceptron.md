@@ -18,7 +18,7 @@ Invented by Frank Rosenblatt at Cornell Aeronautical Laboratory in late 1950s, d
 	- dendrites receive electrical signals from other neurons
 	- signals are processed in neuron's body, which then sends a signal through axon to another neuron
 
-![](./fig-01-neutron-perceptron.png)
+![](./fig-01-neuron-perceptron.png)
 
 An individual neuron can be thought of as a computational unit that processes one or more inputs to produce an output.
 - a perceptron functions analogously to a neuron, it accepts one or more inputs, processes them, and returns an output
@@ -40,6 +40,26 @@ Perceptrons are commonly visualized using a diagram shown above.
 	- a feature that is correlated with positive class will have a positive weight
 	- a feature that is correlated with negative class will have a negative weight
 - edge directed away from computational unit returns output (right circle), and can be thought of as axon
+
+
+### 10.1.2 Activation functions
+
+Perceptron classifies instances by processing a linear combination of features and model parameters using an activation function:
+$$
+y = \phi (\sum_{i=1}^n w_i x_i + b)
+$$
+- $w_i$ are model's parameters, $b$ is a constant bias term, $\phi$ is activation function
+- a linear combination of parameters and inputs is sometimes called **preactivation**
+- several different activation functions are commonly used
+	- Rosenblatt's original perceptron used Heaviside step function
+	- Heaviside step function is also called unit step function as $g(x) = 1 (x>0) and 0 (others)$
+		- x is weighted combination of features
+		- if weighted sum of features and bias term > 0, activation function returns 1 and perceptron predicts that instance is positive class
+		- otherwise, function returns 0 and perceptron predicts that instance is negative class
+	- another common activation function is logistic sigmoid $g(x) = \frac{1}{1+e^{-x}}$
+		- $x$ is weighted sum of inputs
+		- unlike unit step function, logistic sigmoid is differentiable
+		- this difference will become important when discuss artificial neural networks
 
 
 
