@@ -166,6 +166,17 @@ In following two chapters, we discuss techniques that can be used to model linea
 	- the resulting model, called an **Artificial Neural Network (ANN)**, is a universal function approximator
 
 
+## 10.3 Summary
+
+Inspired by neurons, perceptron is linear model for binary classification.
+- perceptron classifies instances by processing a linear combination of features and weights with an activation function
+- while a perceptron with a logistic sigmoid activation function is same model as logistic regression, perceptron learns its weights using an online, error-driven algorithm
+- like other linear classifiers, perceptron separates instances of positive and negative classes using a hyperplane
+- some datasets are not linearly separable
+	- that is, no possible hyperplane can classify all instances correctly
+	- in following chapters, we will discuss two models that can be used with linearly inseparable data
+		- ANN, which creates a universal function approximator from a graph of perceptrons
+		- SVM, which projects data onto a higher dimensional space in which it is linearly separable
 
 :::danger
 :::
