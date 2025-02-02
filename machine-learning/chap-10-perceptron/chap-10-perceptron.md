@@ -116,6 +116,29 @@ Goal is to train a perceptron that can classify animals using two real-valued fe
 ![](./1-kitten-adult-cat-epoch.png)
 
 
+### 10.1.5 Document classification with perceptron
+
+Like other estimators, `Perceptron` class implements `fit` and `predict` methods and hyperparameters are specified through its constructor.
+- `Perceptron` also implements a `partial_fit` method, allowing classifier to be trained incrementally
+
+**Tutorial: 2-rec-sports.ipynb**
+
+Here, we train a perceptron to classify documents from 20 Newsgroups dataset.
+- dataset consists of approximately 20000 documents sampled from 20 Usenet newsgroups
+- dataset is commonly used in document classification and clustering experiments
+	- scikit-learn even provides a convenience function for downloading and reading dataset
+- we train a perceptron to classify documents from three newsgroups *rec.sports.hockey*, *rec.sports.baseball*, and *rec.auto*
+- perceptron is capable of multiclass classification
+	- it use one-versus-all strategy to train a classifier for each class in training data
+- we represent documents as tf-idfweighted bags-of-words
+- `partial_fit` method can be used in conjunction with `HashingVectorizer` to train from large to streaming data in a memory-constrained setting
+	- 1st download and read dataset using `fetch_20newsgroups` function
+		- consistent with other built-in datasets, function returns an object with *data*, *target*, and *target_names* attributes
+	- we specify that documents' headers, footers, and quotes should be removed
+	- each newsgroup used different formatting conventions in headers and footers
+		- retaining them makes classifying documents artificially easy
+	- we produce tf-idf vectors using `TfifdVectorizer`, train perceptron, and evaluate it on test set
+	- without hyperparameter optimization, perceptron's average precision, recall, and F1 score are 0.84
 
 
 
