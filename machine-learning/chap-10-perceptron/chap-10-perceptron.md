@@ -62,6 +62,29 @@ $$
 		- this difference will become important when discuss artificial neural networks
 
 
+### 10.1.3 Perceptron learning algorithm
+
+Perceptron learning algorithm begins by setting weights to zero, or to small random values, and then predicts class for a training instance.
+- perceptron is an error-driven learning algorithm
+	- if prediction is correct, algorithm continues to next instance
+	- if incorrect, algorithm updates weights
+	- formally, update rule is given by $w_i(t+1) = w_i(t) + \alpha(d_j-y_j(t))x_{j,i}$
+	- for each training instance, parameter value for each feature is incremented by $\alpha(d_j-y_j(t))x_{j,i}$
+		- $d_j$ is true class for instance $j$, $y_j(t)$ is predicted class for instance $j$
+		- $x_{j,i}$ is value of ith feature for instance $j$
+		- $\alpha$ is a hyperparameter that controls learning rate
+	- if prediction is correct, $d_j-y_j(t)=0$, and $\alpha(d_j-y_j(t))x_{j,i} = 0$
+		- that is, if prediction is correct, weight is not updated
+		- if prediction is incorrect, we compute $d_j-y_j(t)$, value of feature, and learning rate
+		- then add product (which may be negative) to weight
+
+This update rule is similar to update rule for gradient descent in that weights are adjusted towards classifying instance correctly and size of update is controlled by a learning rate.
+- each pass through training instances is called an **epoch**
+- learning algorithm has converged when it completes an epoch without misclassifying any instances
+- learning algorithm is not guaranteed to converge
+	- later will discuss linearly inseparable datasets for which convergence is impossible
+	- for this reason, learning algorithm also requires a hyperparameter that specifies maximum number of epochs that can be completed before algorithm terminates
+
 
 :::danger
 :::
