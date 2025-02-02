@@ -141,6 +141,30 @@ Here, we train a perceptron to classify documents from 20 Newsgroups dataset.
 	- without hyperparameter optimization, perceptron's average precision, recall, and F1 score are 0.84
 
 
+## 10.2 Limitations of perceptron
+
+Perceptron uses a hyperplane to separate positive and negative classes.
+- a simple example of a classification problem that is linearly inseparable is logical exclusive disjunction, or *XOR* 
+- output of XOR is 1 when one input = 1 and another = 0, otherwise output = 0
+- inputs and outputs of *XOR* are plotted in two dimensions below
+- when *XOR* outputs 1, instance is marked with a circle
+- when *XOR* outputs 0, instance is marked with a diamond
+- it is impossible to separate circles from diamonds using a single straight line
+
+![](./fig-02-XOR.png)
+
+Suppose that instances are pegs on a board.
+- if you were to stretch a rubber band around both positive instances, and stretch a second rubber band around both negative instances, bands would intersect in middle of board.
+- rubber bands represent **convex hulls**, or envelope that contains all points within set and all points along any line connecting a pair points within set
+- feature representations are more likely to be linearly separable in higher dimensional spaces than lower dimensional spaces
+- *i.e.*, text classification problems tend to be linearly separable when high dimensional representations such as bag-of-words are used
+
+In following two chapters, we discuss techniques that can be used to model linearly inseparable data.
+- 1st technique, called **kernelization**, projects linearly inseparable data to a higher dimensional space in which it is linearly separable.
+	- kernelization can be used in many models, including perceptrons, but it is particularly associated with support vector machines
+- 2nd technique creates a directed graph of perceptrons
+	- the resulting model, called an **Artificial Neural Network (ANN)**, is a universal function approximator
+
 
 
 :::danger
