@@ -86,5 +86,39 @@ This update rule is similar to update rule for gradient descent in that weights 
 	- for this reason, learning algorithm also requires a hyperparameter that specifies maximum number of epochs that can be completed before algorithm terminates
 
 
+### 10.1.4 Binary classification with perceptron
+
+We work through a toy classification problem to separate adult cats from kittens
+- only two explanatory variables are available in dataset: proportion of day when animal was asleep and proportion of day when animal was grumpy
+- training data consists of following four instances
+- scatter plot shown below confirms that they are linearly separable
+
+| Instance | Proportion of day sleeping | Proportion of day grumpy | Kitten or adult |
+| :-: | :-: |:-: | :-: |
+| 1 | 0.2 | 0.1 | Kitten |
+| 2 | 0.4 | 0.6 | Kitten |
+| 3 | 0.5 | 0.2 | Kitten |
+| 4 | 0.7 | 0.9 | Adult  |
+
+![](./1-kitten-adult-cat-data.png)
+
+Goal is to train a perceptron that can classify animals using two real-valued features.
+- we represent kittens with positive class and adult cats with negative class
+- perceptron has three input units
+	- $x_1$ is input unit for bias term
+	- $x_2$ and $x_3$ are input units for two features
+- perceptron's computational unit uses unit step activation function
+- here we set maximum number of training epochs to 10
+- if algorithm does not converge within epochs, it will stop and return current values of weights
+- for simplicity, we set learning rate to 1, and all weights to 0 initially
+- in 5 epochs, we got results as shown below
+
+![](./1-kitten-adult-cat-epoch.png)
+
+
+
+
+
+
 :::danger
 :::
