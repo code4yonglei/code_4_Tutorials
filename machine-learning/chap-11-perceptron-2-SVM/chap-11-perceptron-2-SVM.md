@@ -54,7 +54,36 @@ We return to dual form of decision boundary and observation that feature vectors
 		- a kernel does not explicitly map feature vectors to a higher dimensional space or calculate dot product of mapped vectors
 		- a kernel produces same value through a different series of operations that can often be computed more efficiently
 		- a kernel is defined more formally in $K(x,z) = <\phi(x), \phi(z)>$
+- we demonstrate how kernels work
+	- suppose we have two feature vectors, $x = (x_1, x_2)$ and $z = (z_1, z_2)$
+	- in model we wish to map feature vectors to a higher dimensional space using transformation $\phi(x) = x^2$
+	- dot product of mapped, normalized feature vectors is equivalent to $<\phi(x), \phi(z)> = <(x_1^2, x_2^2, \sqrt 2 x_1x_2), (z_1^2, z_2^2, \sqrt2 z_1z_2)>$
+- kernel given by following formula produces same value as dot product of mapped feature vectors
+	- $K(x,z) = <x,z>^2 = (x_1z_1 + x_2z_2)^2 = x_1^2z_1^2 + 2x_1z_1x_2z_2 + x_2^2z_2^2$
+	- $K(x,z) = <\phi(x), \phi(z)>$
+- we plug in values for feature vectors to make this example more concrete
+	- $x = (4,9)$ and $z=(3,3)$
+	- $K(x,z) = 1521$
+	- $<\Phi(x), \Phi(z)> = <(4^2, 9^2, \sqrt2*4*9), (3^2, 3^2, \sqrt2*3*3)> = 1521$
+- kernel $K(x,z)$ produced same value as dot product $\phi(x),\phi(z)$ of mapped feature vectors, but it never explicitly mapped feature vectors to higher dimensional space and required fewer arithmetic operations
+	- this example used only 2D feature vectors
+- datasets with even a modest number of features can result in mapped feature spaces with massive dimensions
+- scikit-learn provides several commonly used kernels, including polynomial, sigmoid, Gaussian, and linear kernels
+	- polynomialkernels are given by equation $K(x, x')=(\gamma<x-x'>+r)^k$
+		- quadratic kernels, or polynomial kernels with $k=2$, are commonly used in natural language processing
+	- sigmoid kernel is given by equation $K(x, x')=tanh(\gamma<x-x'>+r)$
+		- $\gamma$ and $r$ are hyperparameters can be tuned through cross-validation
+	- Gaussian kernel is a good 1st choice for problems requiring nonlinear models
+		- it is a **radial basis function**
+		- a decision boundary that is a hyperplane in mapped feature space is similar to a decision boundary that is a hypersphere in original space
+		- feature space produced by Gaussian kernel can have an infinite number of dimensions, a feat that would be impossible otherwise
+		- Gaussian kernel is given by equation $K(x, x')=exp(-\gamma |x-x'|^2)$
 
+It is always important to scale features when using SVMs, but feature scaling is especially important when using Gaussian kernel.
+- choosing a kernel can be challenging
+- ideally, a kernel measure similarity between instances in a way that is useful to task
+- while kernels are commonly used with SVMs, they can also be used with any model that can be expressed in terms of dot product of two feature vectors, including logistic regression, perceptrons, and **principal component analysis (PCA)**
+- in next section, we address 2nd problem caused by mapping to high-dimensional feature spaces: **generalization**
 
 
 :::danger
