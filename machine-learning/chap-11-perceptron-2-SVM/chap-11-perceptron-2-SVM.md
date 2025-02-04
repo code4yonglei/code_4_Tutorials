@@ -34,13 +34,26 @@ Recall that perceptron separates instances of positive class from instances of n
 - in *polynomial regression* section, we mapped features to a higher dimensional space in which they were linearly related to response variable
 - mapping increased number of features by creating quadratic terms from combinations of original features
 - these synthetic features allowed us to express a nonlinear function with a linear model
-- in general, a mapping is given by $x \arrow \phi(c)$ and $\phi: R^d \arrow R^D$
+- generally, a mapping is given by $x \rightarrow \phi(x)$ and $\phi: R^d \rightarrow R^D$
 - left plot in following figure shows original feature space of a linearly inseparable dataset
 - right plot on shows that data is linearly separable after mapping to a higher dimensional space
 
 ![](./fig-01-high-dimension.png)
 
-
+We return to dual form of decision boundary and observation that feature vectors appear only inside of a dot product.
+- we can map data to a higher dimensional space by applying mapping to feature vectors
+	- $f(x) = \sum \alpha_i y_i <x_i, x> + b$
+	- $f(x) = \sum \alpha_i y_i <\phi(x_i), \phi(x)> + b$
+- this mapping allows us to express more complex models, but it introduces computation and generalization problems
+- mapping feature vectors and computing their dot products can require a prohibitively large amount of processing power
+- in 2nd equation that while we mapped feature vectors to a higher dimensional space, feature vectors still only appear as a dot product
+	- dot product is a scalar; we do not require mapped feature vectors once this scalar has been computed
+	- if we can use a different method to produce same scalar as dot product of mapped vectors, we can avoid costly work of explicitly computing dot product and mapping feature vectors
+	- there is a method called **kernel trick**
+		- a kernel is a function that, given original feature vectors, returns same value as dot product of its corresponding mapped feature vectors
+		- a kernel does not explicitly map feature vectors to a higher dimensional space or calculate dot product of mapped vectors
+		- a kernel produces same value through a different series of operations that can often be computed more efficiently
+		- a kernel is defined more formally in $K(x,z) = <\phi(x), \phi(z)>$
 
 
 
