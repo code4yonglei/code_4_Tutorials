@@ -65,6 +65,29 @@ print(preprocessing.scale(array, axis=1))
 > In following sections, we will review variations of two most common representation of text that are used in ML: bag-of-words model and word embeddings.
 
 
+### 4.3.1 Bag-of-words model
+
+The most common representation of text is **bag-of-words model**.
+- This representation uses a multiset, or bag, that encodes words that appear in a text; bag-of-words does not encode any of text's syntax, ignores order of words, and disregards all grammar.
+- Bag-of-words can be thought of as **an extension to one-hot encoding**. It creates one feature for each word of interest in text.
+- The bag-of-words model is motivated by intuition that documents containing similar words often have similar meanings.
+- The bag-of-words model can be used effectively for document classification and retrieval despite limited information that it encodes.
+- A collection of documents is called a **corpus**.
+
+Here we use a corpus with following two documents to examine bag-of-words model:
+```
+corpus = [
+    'UNC played Duke in basketball',
+    'Duke lost the basketball game'
+]
+```
+- this corpus contains eight unique words, and these unique words comprise its vocabulary.
+- The bag-of-words model uses a feature vector with an element for each word in corpus's vocabulary to represent each document. 
+- Our corpus has eight unique words, so each document will be represented by a vector with eight elements.
+- The number of elements that comprise a feature vector is called the **vector's dimension**.
+- A dictionary maps vocabulary to indices in feature vector.
+    - The dictionary for a bag-of-words could be implemented using a Python `Dictionary`, but Python data structure and representation's mapping are distinct.
+
 
 
 
