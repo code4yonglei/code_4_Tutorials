@@ -5,6 +5,29 @@ Previous examples use real-valued explanatory variables, such as height, weight,
 - In this chapter, we learn to create features that represent such variables.
 
 
+## 4.1 Extracting features from categorical variables
+
+Many problems have explanatory variables that are **categorical** or **nominal**.
+- A categorical variable can take one of a fixed set of values.
+    - an application that predicts job salary might use categorical variables such as position in a city.
+- Categorical variables are commonly encoded using **one-of-k encoding**, or **one-hot encoding**, in which explanatory variable is represented using one binary feature for each of its possible values.
+    - assume model has a city variable: NY, SF, or LA.
+    - One-hot encoding represents variable using one binary feature for each city.
+    - Scikit-learn's `DictVectorizer` class is a transformer to one-hot encode categorical features
+    ```
+    from sklearn.feature_extraction import DictVectorizer
+    one_hot_encoder = DictVectorizer()
+
+    cities = [{'city': 'LA'}, {'city': 'NY'}, {'city': 'SF'}]
+    print(cities)
+    print(one_hot_encoder.fit_transform(cities).toarray())
+    ```
+- It may seem intuitive to represent values of a categorical explanatory variable with a single integer feature.
+    - LA by 0, NY by 1 and SF by 2.
+    - problem is that this representation encodes artificial information.
+    - pepresenting cities with integers encodes an order for cities that does not exist in real world, and facilitates comparisons of them that do not make sense.
+    - there is no natural order of cities by which SF is 1 more than NY.
+    - One-hot encoding avoids this problem and only represents variable value.
 
 
 
