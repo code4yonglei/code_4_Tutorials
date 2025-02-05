@@ -59,6 +59,11 @@ print(preprocessing.scale(array, axis=1))
 - Quartiles are calculated by splitting sorted dataset into 4 parts of equal size. median is 2nd quartile; interquartile range is the difference of 3rd and 1st quartiles
 
 
+## 4.3 Extracting features from text
+
+> Many ML problems use text, which usually represents natural language. Text must be transformed to a vector representation that encodes some aspect of its meaning.
+> In following sections, we will review variations of two most common representation of text that are used in ML: bag-of-words model and word embeddings.
+
 
 
 
