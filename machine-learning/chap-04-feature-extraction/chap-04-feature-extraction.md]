@@ -1,0 +1,16 @@
+# Chapter 4: Feature Extraction
+
+Previous examples use real-valued explanatory variables, such as height, weight, salary
+- Many ML problems require learning from categorical variables, text, or images.
+- In this chapter, we learn to create features that represent such variables.
+
+
+
+
+
+
+
+
+
+:::danger
+:::
