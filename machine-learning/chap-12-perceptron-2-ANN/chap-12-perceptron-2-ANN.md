@@ -55,6 +55,23 @@ Instead of trying to represent XOR with a single perceptron, we will build an AN
 - the output of these neurons will be received by a third neuron that represents AND to test that both of XOR's conditions are true
 
 
+## 12.2 Feed-forward and feedback ANNs
+
+ANNs are described by three components.
+- 1st is model's architecture, or topology, which describes types of neuron and structure of connections between them.
+- 2nd we have activation functions used by artificial neurons
+- 3rd component is learning algorithm that finds optimal values of weights
+
+There are two main types of ANN.
+- **feed-forward neural networks** are most common type and are defined by their directed acyclic graphs
+	- information travels in one direction only, towards output layer
+	- commonly used to learn a function to map an input to an output
+	- *i.e.*, a feed-forward net can be used to recognize objects in a photo or predict likelihood that a subscriber of a SaaS product will churn
+- **feedback neural networks (or recurrent neural networks)**, contain cycles
+	- feedback cycles can represent an internal state for network that can cause network's behavior to change over time based on its input
+	- temporal behavior of feedback neural networks make them suitable for processing sequences of inputs
+	- feedback neural nets have been used to translate documents between languages and automatically transcribe speech
+	- because feedback neural networks are not implemented in scikit-learn, we will limit our discussion to only feed-forward neural networks
 
 
 
