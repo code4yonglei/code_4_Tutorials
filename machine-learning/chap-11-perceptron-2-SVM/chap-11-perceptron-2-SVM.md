@@ -86,5 +86,17 @@ It is always important to scale features when using SVMs, but feature scaling is
 - in next section, we address 2nd problem caused by mapping to high-dimensional feature spaces: **generalization**
 
 
+## 11.2 Maximum margin classification and support vectors
+
+Following figure depicts instances from two linearly separable classes and three possible decision boundaries.
+- all decision boundaries separate training instances of positive class from training instances of negative class, and a perceptron can learn any of them
+- which one is most likely to perform best on test data?, from visualization
+	- dotted decision boundary seems to be best
+	- solid decision boundary is near many of positive instances
+		- test set could contain a positive instance that has a slightly smaller value for 1st explanatory variable, $x_1$
+		- this instance would be classified incorrectly
+	- dashed decision boundary is farther away from most of training instances
+		- however, it is near one of positive instances and one of negative instances
+
 :::danger
 :::
