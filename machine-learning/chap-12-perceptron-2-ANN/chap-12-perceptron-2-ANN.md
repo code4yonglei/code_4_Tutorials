@@ -101,6 +101,31 @@ binary output, and a Heaviside step activation function.
 	- it allows us to understand how changes to inputs affect output
 
 
+## 12.4 Training multi-layer perceptrons
+
+### 12.4.1 Gradient descent method to minimize function
+
+Here discuss how to train a multi-layer perceptron.
+- recall from [Chap. 05](xxx) that we use gradient descent to minimize a real-valued function, *C,* of many variables
+	- assume that *C* is a function of two variables *v1* and *v2*
+	- to understand how to change variables to minimize *C*, we need a small change in variables to produce a small change in outpu
+- we represent a change in value of *v1* with *Δv1*, a change in value of *v2* with *Δv2*, and a change in value of *C* with *ΔC*
+	- relation between -ΔC- and changes to variables is given by $\delta C \approx \frac{\part C}{\partial v1}\delta v1 + \frac{\part C}{\partial v2}\delta v2$
+	- represent *Δv1* and *Δv2* as a vector $\delta v = (\delta v1, \delta v2)^T$
+	- represent partial derivatives of *C* with respect to variables using gradient vector of *C* $\delta C = (\farc{\partial C}{partial v1}, \farc{\partial C}{partial v2})^T$
+	- rewrite formula for *ΔC* as $\delta C = \Partial C \delta v$
+- on each iteration, *ΔC* should be negative to decrease value of cost function
+	- to guarantee that ΔC will be negative, we set *Δv* to following $\delta v = - \eta \ Partial C$
+	- $\eta$ is a hyperparameter called **learning rate**
+- we substitute for *Δv* to make it clear why *ΔC* will be negative
+	- $\delta v = - \eta \ Partial C \dot \ Partial C$ 
+	- $\Partial C$ squared will always be greater than zero
+	- we then multiply it by learning rate and negate product
+- on each iteration, we calculate gradient of *C*, $\Partial C$, and update variables to take a step in direction of steepest decline
+	- we omit one important detail for training our multi-layer perceptron
+		- how do we understand how changes in values of hidden units' weights affect cost?
+		- more concretely, how do we calculate partial derivative of cost function with respect to weights connecting hidden layers?
+
 
 
 
