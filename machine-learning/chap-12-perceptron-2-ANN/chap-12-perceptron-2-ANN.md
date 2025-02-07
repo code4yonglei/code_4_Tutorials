@@ -74,6 +74,38 @@ There are two main types of ANN.
 	- because feedback neural networks are not implemented in scikit-learn, we will limit our discussion to only feed-forward neural networks
 
 
+## 12.3 Multi-layer perceptrons
+
+Multi-layer perceptron is a simple ANN and its name, however, is a misnomer.
+- a multilayer perceptron is not a single perceptron with multiple layers, but rather multiple layers
+of artificial neurons that resemble perceptrons
+- multi-layer perceptrons have three or more layers of artificial neurons that form a directed, acyclic graph
+- generally, each layer is fully connected to subsequent layer
+	- output (or activation) of each artificial neuron in a layer is an input to every artificial neuron in next layer
+	- features are input through input layer
+- simple neurons in input layer are connected to at least one Hidden layer
+	- hidden layers represents latent variables
+	- these cannot be observed in training data
+	- hidden neurons in these layers are often called hidden units
+	- finally last hidden layer is connected to an output layer
+	- activations of output layer are predicted values of response variable
+- following diagram depicts the architecture of a multilayer perceptron with three layers
+	- note: input layer is not included in count of a network's layers, but it is counted in `MLPClassifier.n_layers_`
+
+Recall from [Chap. 10](../chap-10-perceptron/chap-10-perceptron.md) that a perceptron has one or more binary inputs, one
+binary output, and a Heaviside step activation function.
+- a small change to a perceptron's weights may have no effect on its output, or it may cause its output to flip from 1 to 0 or vice versa
+- this make it difficult to understand how network's performance changes as we change its weights
+- as such, we build our MLP from a different type of neuron
+- a **sigmoid neuron** has one or more real-valued inputs and one real-valued outputs, and it uses a sigmoid activation function
+	- it allows us to understand how changes to inputs affect output
+
+
+
+
+
+
+
 
 :::danger
 :::
